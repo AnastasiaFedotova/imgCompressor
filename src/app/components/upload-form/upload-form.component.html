@@ -1,1 +1,4 @@
-<p>upload-form works!</p>
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <input formControlName="image" type="file">
+  <button type="submit" [disabled]="!uploadForm.valid">Submit</button>
+</form>
