@@ -1,4 +1,5 @@
-<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
-  <input formControlName="image" type="file">
-  <button type="submit" [disabled]="!uploadForm.valid">Submit</button>
+<form class="img-form" [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+  <input #inputImg class="img-form__input" formControlName="image" (change)="onSelected($event)" type="file">
+  <button class="img-form__button" type="button" (click)="inputImg.click()">Pick img</button>
+  <button class="img-form__button" type="submit" [disabled]="!uploadForm.valid">Submit</button>
 </form>
